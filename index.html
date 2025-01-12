@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spotify Search</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Spotify search</h1>
-    <input type="text" name="" id="">
-    
-    <script type="module" src="script/spotify.js"></script>
+    <h1>Spotify Search</h1>
+    <div id="botones_div">
+        <input type="text" id="search_input" placeholder="Escribe el nombre de una canción...">
+        <button type="button" id="search_button" disabled>Buscar</button>
+        <button type="button" class="borrar">Borrar</button>
+    </div>
+    <div id="body_div">
+        <div id="div_canciones" class="hidden"></div>
+        <div id="div_artista" class="hidden"></div>
+    </div>
+    <script type="module" src="./script/spotify.js"></script>
 </body>
 </html>

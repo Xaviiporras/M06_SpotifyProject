@@ -1,0 +1,164 @@
+/* General */
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+/* Input y botones */
+#botones_div {
+    margin: 20px 0;
+}
+
+input {
+    width: 60%;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    border: 2px solid #8e44ad;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #8e44ad;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button.borrar {
+    background-color: #e74c3c;
+}
+
+button:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+/* Contenedor principal */
+#body_div {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Contenedor de canciones */
+#div_canciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 70%;
+}
+
+/* Tarjetas de canciones */
+.track {
+    background-color: white;
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+}
+
+.track img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.track h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #34495e;
+}
+
+.track:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.track p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #7f8c8d;
+}
+
+/* Contenedor del artista */
+#div_artista {
+    width: 30%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imagen del artista */
+#div_artista img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #8e44ad;
+}
+
+/* Información del artista */
+#div_artista h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#div_artista p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+#div_artista ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    color: #8e44ad;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Media queries */
+@media (max-width: 768px) {
+    input {
+        width: 80%;
+    }
+
+    .track {
+        width: 90%;
+    }
+}
