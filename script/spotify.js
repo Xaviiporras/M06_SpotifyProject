@@ -1,13 +1,32 @@
 import { clientID, clientSecret } from "../env/client.js";
 
+const URL = "https://accounts.spotify.com/authorize";
+const redirectUri = "http://127.0.0.1:5500/playlist.html";
+const scopes = "playlist-modify-private user-library-modify playlist-modify-public";
 const btnBuscar = document.querySelector("#search_button");
 const inputTrack = document.querySelector("#search_input");
 const divCanciones = document.querySelector("#div_canciones");
 const divArtista = document.querySelector("#div_artista");
 const loadMoreBtn = document.querySelector("#load_more");
+const playlistBttn = document.querySelector(".playlist");
 let tokenAcces;
 let offset = 0;
 let totalTracks = 0;
+playlistBttn.addEventListener("click", () => autoritzar())
+
+
+const autoritzar = function () {
+    const authUrl =
+    URL +
+    `?client_id=${clientID}` +
+    `&response_type=token` +
+    `&redirect_uri=${redirectUri}` +
+    `&scope=${scopes}`;
+    
+    
+    window.location.assign(authUrl);
+};
+
 
 // Botón "Borrar"
 document.querySelector(".borrar").addEventListener("click", () => {
@@ -24,7 +43,7 @@ document.querySelector(".borrar").addEventListener("click", () => {
 // Obtener canciones seleccionadas del localStorage
 const getSelectedTracks = () => {
     const storedTracks = localStorage.getItem("selectedTracks");
-    return storedTracks ? storedTracks.split(";") : [];
+    return storedTracks ? storedTracks.split(",") : [];
 };
 
 // Guardar canciones seleccionadas en localStorage
@@ -33,7 +52,7 @@ const saveSelectedTrack = (trackId) => {
 
     if (!selectedTracks.includes(trackId)) {
         selectedTracks.push(trackId);
-        localStorage.setItem("selectedTracks", selectedTracks.join(";"));
+        localStorage.setItem("selectedTracks", selectedTracks.join(","));
         alert("¡Canción añadida correctamente al localStorage!");
     } else {
         alert("Esta canción ya está en el localStorage.");
