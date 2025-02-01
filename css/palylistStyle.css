@@ -82,3 +82,45 @@ li button:hover {
     border-radius: 5px;
     cursor: pointer;
 }
+
+#selected_songs_panel {
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    width: 30%; /* Ajusta según el diseño */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#selected_songs_list {
+    list-style: none;
+    padding: 0;
+}
+
+#selected_songs_list .track-item {
+    background-color: #165f37; /* Color de las canciones en los otros paneles */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px; /*  Añadir espacio entre las canciones */
+}
+
+
+#selected_songs_list .track-item button {
+    background-color: #f8d7da;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #721c24;
+}
+
+#selected_songs_list .track-item button:hover {
+    background-color: #f5c6cb;
+}
